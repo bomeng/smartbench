@@ -16,6 +16,7 @@ Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and 
 Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
 ```sh
 cd <smartbench_home>/tpcdsDataGenerator/tpcTools
+cp Makefile.suite Makefile
 make
 ```
 Then you can set the test data size by changing the scale in the `tpcds.conf` file (Note: 1=1GB, 100=100GB).
