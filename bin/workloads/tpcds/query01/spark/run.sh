@@ -24,8 +24,6 @@ hibench_dir=${root_dir}/report/query01/spark/monitor.log
 enter_bench TPCDSQuery01 ${workload_config} ${current_dir}
 show_bannar start
 
-echo ${influxdb.ip}
-
 # prepare SQL
 HIVEBENCH_SQL_FILE=${root_dir}/sparkbench/tpcds/query/query01.sql
 
@@ -37,6 +35,7 @@ END_TIME=`timestamp`
 sleep 5
 SIZE=`dir_size $OUTPUT_HDFS`
 gen_report ${START_TIME} ${END_TIME} ${SIZE:-0}
+sleep 10
 python ${root_dir}/bin/functions/sparkParser.py ${INFLUXDB_IP} ${INFLUXDB_PORT} ${INFLUXDB_USER} ${INFLUXDB_PWD} ${INFLUXDB_NAME} ${SPARK_IP_PORT} ${application_name} ${hibench_dir}
 show_bannar finish
 leave_bench
