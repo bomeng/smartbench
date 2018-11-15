@@ -4,14 +4,27 @@
 ### Installation ###
 
 - Clone the project
-```
+```sh
 git clone git@git.jd.com:bo.meng/smartbench.git
 ```
 
 - Configuration
-Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started. 
+Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started.
+Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and `tpcds.conf` to be properly configured.
 
+- Data preparation
+Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
+```sh
+cd <smartbench_home>/tpcdsDataGenerator/tpcTools
+make
+```
 
+Then you can set the test data size by changing the scale in the `tpcds.conf` file (Note: 1=1GB, 100=100GB).
+Finally, you can issue the command to generate the data:
+```sh
+cd <smartbench_home>
+bin/workloads/tpcds/prepare/prepare.sh
+```
 
 
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
