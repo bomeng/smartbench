@@ -67,6 +67,12 @@ HiBenchEnvPropMapping=dict(
     # For TPC-DS
     TPCDS_DATAGENERATOR_DIR="tpcds.datagenerator.dir",
     TPCDS_DATAGENERATOR_SCALE="tpcds.datagenerator.scale",
+    INFLUXDB_IP="influxdb.ip",
+    INFLUXDB_PORT="influxdb.port",
+    INFLUXDB_USER="influxdb.user",
+    INFLUXDB_PWD="influxdb.pwd",
+    INFLUXDB_NAME="influxdb.name",
+    SPARK_IP_PORT="spark.ip.port",
 
     # For Sleep workload
     MAP_SLEEP_TIME="hibench.sleep.mapper.seconds",

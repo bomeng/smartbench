@@ -17,22 +17,27 @@
 current_dir=`dirname "$0"`
 current_dir=`cd "$current_dir"; pwd`
 root_dir=${current_dir}/../../../../../
-workload_config=${root_dir}/conf/workloads/tpcds/tpcds.conf
+workload_config=${root_dir}/conf/tpcds.conf
 . "${root_dir}/bin/functions/load_bench_config.sh"
+hibench_dir=${root_dir}/report/query01/spark/monitor.log
 
 enter_bench TPCDSQuery01 ${workload_config} ${current_dir}
 show_bannar start
+
+echo ${influxdb.ip}
 
 # prepare SQL
 HIVEBENCH_SQL_FILE=${root_dir}/sparkbench/tpcds/query/query01.sql
 
 START_TIME=`timestamp`
-run_spark_job --app_name "query01_${START_TIME}" ${HIVEBENCH_SQL_FILE}
+application_name=query01_${START_TIME}
+run_spark_job --app_name "${application_name}" ${HIVEBENCH_SQL_FILE}
 END_TIME=`timestamp`
 
 sleep 5
 SIZE=`dir_size $OUTPUT_HDFS`
 gen_report ${START_TIME} ${END_TIME} ${SIZE:-0}
+python ${root_dir}/bin/functions/sparkParser.py ${INFLUXDB_IP} ${INFLUXDB_PORT} ${INFLUXDB_USER} ${INFLUXDB_PWD} ${INFLUXDB_NAME} ${SPARK_IP_PORT} ${application_name} ${hibench_dir}
 show_bannar finish
 leave_bench
 
