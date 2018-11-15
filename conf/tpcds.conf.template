@@ -1,0 +1,11 @@
+#======================================================
+# TPC-DS 
+#======================================================
+
+# TPC-DS data generator location
+tpcds.datagenerator.dir		${hibench.home}/tpcdsDataGenerator
+
+# Scale factor indicates raw data size in GB, for example,
+# 100, 300, 1000, 3000, 10000, 30000, 100000
+tpcds.datagenerator.scale	1
+
