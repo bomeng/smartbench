@@ -28,18 +28,18 @@ START_TIME=`timestamp`
 echo -e "${Blue}Generating the TPC-DS data (size: ${TPCDS_DATAGENERATOR_SCALE}G, overwirte if data exists) ...${Color_Off}"
 mkdir -p ${TPCDS_DATAGENERATOR_DIR}/data
 cd ${TPCDS_DATAGENERATOR_DIR}/tpcdsTools/
-# ./dsdgen -DIR ${TPCDS_DATAGENERATOR_DIR}/data -VERBOSE Y -FORCE Y -SCALE ${TPCDS_DATAGENERATOR_SCALE}
+./dsdgen -DIR ${TPCDS_DATAGENERATOR_DIR}/data -VERBOSE Y -FORCE Y -SCALE ${TPCDS_DATAGENERATOR_SCALE}
 
 echo -e "${Blue}Creating the database ...${Color_Off}"
-#spark-sql -f ${TPCDS_DATAGENERATOR_DIR}/tableCreater/create_database.sql > ${TPCDS_DATAGENERATOR_DIR}/tableCreater/db.log
+spark-sql -f ${TPCDS_DATAGENERATOR_DIR}/tableCreater/create_database.sql > ${TPCDS_DATAGENERATOR_DIR}/tableCreater/db.log
 
 echo -e "${Blue}Creating the tables ...${Color_Off}"
-#spark-sql -f ${TPCDS_DATAGENERATOR_DIR}/tableCreater/create_tables.sql > ${TPCDS_DATAGENERATOR_DIR}/tableCreater/table.log
+spark-sql -f ${TPCDS_DATAGENERATOR_DIR}/tableCreater/create_tables.sql > ${TPCDS_DATAGENERATOR_DIR}/tableCreater/table.log
 
 echo -e "${Blue}Loading into HDFS ...${Color_Off}"
-#rmr_hdfs $DATA_HDFS/tpcds/ || true
-#hdfs dfs -mkdir -p $DATA_HDFS/tpcds/
-#hdfs dfs -put ${TPCDS_DATAGENERATOR_DIR}/data $DATA_HDFS/tpcds/
+rmr_hdfs $DATA_HDFS/tpcds/ || true
+hdfs dfs -mkdir -p $DATA_HDFS/tpcds/
+hdfs dfs -put ${TPCDS_DATAGENERATOR_DIR}/data $DATA_HDFS/tpcds/
 
 echo -e "${Blue}Loading into Hive ...${Color_Off}"
 cd ${TPCDS_DATAGENERATOR_DIR}/dataParser/
