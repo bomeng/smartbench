@@ -1,30 +1,38 @@
-# SmartBench
-## Benchmark for Apache Spark and beyond ##
+# SmartBench - *Benchmark for Apache Spark and beyond*
 
 ### Installation ###
 
 1. Clone the project
-```sh
-git clone git@git.jd.com:bo.meng/smartbench.git
-```
+
+    Use the following comamands to clone the project to your local environment.
+    ```sh
+    git clone git@git.jd.com:bo.meng/smartbench.git
+    ```
 
 2. Configuration
-Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started.
-Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and `tpcds.conf` to be properly configured.
+
+    Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started.
+    Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and `tpcds.conf` to be properly configured.
 
 3. Data preparation
-Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
-```sh
-cd <smartbench_home>/tpcdsDataGenerator/tpcTools
-make
-```
-Then you can set the test data size by changing the scale in the `tpcds.conf` file (Note: 1=1GB, 100=100GB).
-Finally, you can issue the command to generate the data:
-```sh
-cd <smartbench_home>
-bin/workloads/tpcds/prepare/prepare.sh
-```
-The test data will be generated and loaded into corresponding Hive tables. 
+
+    Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
+    ```sh
+    cd <smartbench_home>/tpcdsDataGenerator/tpcTools
+    cp Makefile.suite Makefile
+    make
+    ```
+    Then you can set the test data size by changing the scale in the `tpcds.conf` file (Note: 1=1GB, 100=100GB).
+    Finally, you can issue the command to generate the data:
+    ```sh
+    cd <smartbench_home>
+    bin/workloads/tpcds/prepare/prepare.sh
+    ```
+    The test data will be generated and loaded into corresponding Hive tables. 
+    
+4. Run queries
+    
+    
 
 
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
