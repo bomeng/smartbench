@@ -3,22 +3,21 @@
 
 ### Installation ###
 
-- Clone the project
+1. Clone the project
 ```sh
 git clone git@git.jd.com:bo.meng/smartbench.git
 ```
 
-- Configuration
+2. Configuration
 Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started.
 Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and `tpcds.conf` to be properly configured.
 
-- Data preparation
+3. Data preparation
 Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
 ```sh
 cd <smartbench_home>/tpcdsDataGenerator/tpcTools
 make
 ```
-
 Then you can set the test data size by changing the scale in the `tpcds.conf` file (Note: 1=1GB, 100=100GB).
 Finally, you can issue the command to generate the data:
 ```sh
