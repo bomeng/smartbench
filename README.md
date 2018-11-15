@@ -1,3 +1,19 @@
+# SmartBench
+## Benchmark for Apache Spark and beyond ##
+
+### Installation ###
+
+- Clone the project
+```
+git clone git@git.jd.com:bo.meng/smartbench.git
+```
+
+- Configuration
+Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started. 
+
+
+
+
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
 ## The bigdata micro benchmark suite ##
 
