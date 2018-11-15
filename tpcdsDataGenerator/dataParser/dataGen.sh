@@ -71,3 +71,5 @@ spark-submit web_sales.py;
 
 echo "Insert data into tpcds.web_site"
 spark-submit web_site.py;
+
+unset DATA_HDFS
