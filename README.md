@@ -29,6 +29,10 @@
     bin/workloads/tpcds/prepare/prepare.sh
     ```
     The test data will be generated and loaded into corresponding Hive tables. 
+    
+4. Run queries
+    
+    
 
 
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
