@@ -2,7 +2,11 @@
 
 ### Installation ###
 
-1. Clone the project
+1. Prerequisite
+    
+    Hadoop, Hive, Spark, InfluxDB, Grafana are properly installed and configured in the cluster. Currently we have only tested the project with Spark on Yarn mode.
+
+2. Clone the project
 
     Use the following comamands to clone the project to your local environment.
     ```sh
@@ -13,12 +17,13 @@
     git clone http://git.jd.com/bo.meng/smartbench.git
     ```
 
-2. Configuration
+3. Configuration
 
-    Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started.
+    Configure the project (HDFS, Spark, TPC-DS, etc.) by creating the configuration files in the `conf` folder. There are also some templates to get started,
+    for example, you can use `hadoop.conf.template` to configure hadoop related properties.
     Most of the time, you will need `hibench.conf`, `spark.conf`, `hadoop.conf` and `tpcds.conf` to be properly configured.
 
-3. Data preparation
+4. Data preparation
 
     Test data will be generated via TPC-DS tools. First go to TPC-DS directory and compile the source code:
     ```sh
@@ -34,7 +39,7 @@
     ```
     The test data will be generated and loaded into corresponding Hive tables. 
     
-4. Run queries
+5. Run queries
     
     
 
