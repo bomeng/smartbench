@@ -41,8 +41,16 @@
     
 5. Run queries
     
-    
+    For example, if you want to run Query01, you can run the following command:
+    ```sh
+    cd <smartbench_home>
+    bin/workloads/tpcds/query01/spark/run.sh
+    ```
 
+    The job will take a while to finish depends on your cluster performance. After the job finishes, you can find the log in the following folder:
+    ```sh
+    cd <smartbench_home>/report/query01
+    ```
 
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
 ## The bigdata micro benchmark suite ##
