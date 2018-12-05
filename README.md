@@ -8,6 +8,10 @@
     ```sh
     git clone git@git.jd.com:bo.meng/smartbench.git
     ```
+    or
+    ```sh
+    git clone http://git.jd.com/bo.meng/smartbench.git
+    ```
 
 2. Configuration
 
