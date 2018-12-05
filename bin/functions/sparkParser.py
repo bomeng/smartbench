@@ -53,9 +53,9 @@ def sparkTask(ipPort, stageID, attamps, applicationID, res_data):
         print "Cannot fetch task level metric."
     data = json.loads(taskList)
     for x in data:
-        tags = {'taskId' : int(x['taskId']), 'attempt' : int(x['attempt']), 'host' : str(x['host']), 'executorId' : int(x['executorId'])}
+        tags = {'applicationID' : applicationID,'taskId' : int(x['taskId']), 'attempt' : int(x['attempt']), 'host' : str(x['host']), 'executorId' : int(x['executorId'])}
         unixLaunchTime = time.strptime(x['launchTime'],'%Y-%m-%dT%H:%M:%S.%f%Z')
-        launchTime = time.strftime('%Y-%m-%dT%H:%M:%S%Z', unixLaunchTime)
+        launchTime = time.strftime('%Y-%m-%dT%H:%M:%SZ', unixLaunchTime)
         fields ={'launchTime' : launchTime, \
         'duration' : int(x['duration']), \
         'status' : x['status'], \
@@ -130,7 +130,7 @@ def hibench(dir, applicationID, client):
                 for i in info:
                     if "timestamp" in i:
                         tmp = float(i.split(',')[0].split(':')[1])
-                        timestamp = str(datetime.fromtimestamp(tmp).strftime('%Y-%m-%dT%H:%M:%SZ'))
+                        timestamp = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(tmp))
                     elif "hostname" in i:
                         hostname = i.split(',')[0].split(':')[1].split('\'')[1]
                 for i in info:

@@ -33,7 +33,8 @@ run_spark_job --app_name "${application_name}" ${HIVEBENCH_SQL_FILE}
 END_TIME=`timestamp`
 
 sleep 5
-SIZE=`dir_size $OUTPUT_HDFS`
+#SIZE=`dir_size $OUTPUT_HDFS`
+SIZE=0
 gen_report ${START_TIME} ${END_TIME} ${SIZE:-0}
 sleep 10
 python ${root_dir}/bin/functions/sparkParser.py ${INFLUXDB_IP} ${INFLUXDB_PORT} ${INFLUXDB_USER} ${INFLUXDB_PWD} ${INFLUXDB_NAME} ${SPARK_IP_PORT} ${application_name} ${hibench_dir}
