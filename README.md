@@ -37,7 +37,10 @@
     cd <smartbench_home>
     bin/workloads/tpcds/prepare/prepare.sh
     ```
-    The test data will be generated and loaded into corresponding Hive tables. 
+    The test data will be generated and loaded into corresponding Hive tables. You can also find logs for preparing process in the following folder:
+    ```sh
+    cd <smartbench_home>/report/tpcds/prepare
+    ```
     
 5. Run queries
     
