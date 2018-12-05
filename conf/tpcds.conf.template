@@ -9,3 +9,15 @@ tpcds.datagenerator.dir		${hibench.home}/tpcdsDataGenerator
 # 100, 300, 1000, 3000, 10000, 30000, 100000
 tpcds.datagenerator.scale	1
 
+# influxdb ip, change according to your influxdb installation
+influxdb.ip			10.252.193.1
+# influxdb port, change arrcording to your influxdb installation
+influxdb.port			8086
+# influxdb user / password
+influxdb.user			testuser
+influxdb.pwd			testpwd
+# influxdb database name
+influxdb.name			tpcds
+
+# spark history server ip and port
+spark.ip.port            10.252.193.1:18080
