@@ -1,10 +1,15 @@
 # SmartBench - *Benchmark for Apache Spark and beyond*
 
-### Installation ###
+### Quick Start Guide ###
 
 1. Prerequisite
     
-    Hadoop, Hive, Spark, InfluxDB, Grafana are properly installed and configured in the cluster. Currently we have only tested the project with Spark on Yarn mode.
+    Apache Hadoop, Apache Hive, Apache Spark, InfluxDB, Grafana are properly installed and configured in the cluster. Currently we have only tested the project with Spark on Yarn mode.
+    * [Apache Haddoop(https://hadoop.apache.org/)]
+    * [Apache Hive]
+    * [Apache Spark]
+    * [InfluxDB]
+    * [Grafana]
 
 2. Clone the project
 
