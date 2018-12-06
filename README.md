@@ -58,7 +58,7 @@
     ```
 
     You can also log into InfluxDB CLI to check the log:
-    ```sh
+    ```sql
     influx -precision rfc3339
     use tpcds
     show measurements
