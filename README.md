@@ -57,6 +57,17 @@
     cd <smartbench_home>/report/query01
     ```
 
+    You can also log into InfluxDB CLI to check the log:
+    ```sh
+    influx -precision rfc3339
+    use tpcds
+    show measurements
+    select * from cpu
+    ...
+    ```
+
+    If you have Grafana installed and connected to InfluxDB, you can also visualize the result. Please refer Grafana document for how to create the dashboard.
+
 # HiBench Suite [![Build Status](https://travis-ci.org/intel-hadoop/HiBench.svg?branch=master)](https://travis-ci.org/intel-hadoop/HiBench)
 ## The bigdata micro benchmark suite ##
 
