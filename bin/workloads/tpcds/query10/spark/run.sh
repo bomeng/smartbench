@@ -39,3 +39,4 @@ sleep 10
 python ${root_dir}/bin/functions/sparkParser.py ${INFLUXDB_IP} ${INFLUXDB_PORT} ${INFLUXDB_USER} ${INFLUXDB_PWD} ${INFLUXDB_NAME} ${SPARK_IP_PORT} ${application_name} ${hibench_dir}
 show_bannar finish
 leave_bench
+
