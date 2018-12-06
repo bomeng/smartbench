@@ -4,12 +4,13 @@
 
 1. Prerequisite
     
-    Apache Hadoop, Apache Hive, Apache Spark, InfluxDB, Grafana are properly installed and configured in the cluster. Currently we have only tested the project with Spark on Yarn mode.
-    * [Apache Haddoop(https://hadoop.apache.org/)]
-    * [Apache Hive]
-    * [Apache Spark]
-    * [InfluxDB]
-    * [Grafana]
+    Apache Hadoop, Apache Hive, Apache Spark, InfluxDB, Grafana and Python are properly installed and configured in the cluster. Currently we have only tested the project with Spark on Yarn mode.
+    * [Apache Haddoop](https://hadoop.apache.org/)
+    * [Apache Hive](https://hive.apache.org/)
+    * [Apache Spark](https://spark.apache.org/)
+    * [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb/)
+    * [Grafana](https://grafana.com/)
+    * [Python](https://www.python.org/)
 
 2. Clone the project
 
