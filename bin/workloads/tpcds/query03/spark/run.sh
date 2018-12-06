@@ -28,7 +28,7 @@ show_bannar start
 HIVEBENCH_SQL_FILE=${root_dir}/sparkbench/tpcds/query/query03.sql
 
 START_TIME=`timestamp`
-application_name=query01_${START_TIME}
+application_name=query03_${START_TIME}
 run_spark_job --app_name "${application_name}" ${HIVEBENCH_SQL_FILE}
 END_TIME=`timestamp`
 
