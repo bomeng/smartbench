@@ -11,7 +11,7 @@ import time
 import sys
 
 def sparkApplicaiton(ipPort, applicationName, client):
-    print("Fetch current application information.")
+    print("Fetching current application information ...")
     url = 'http://' + ipPort + '/api/v1/applications'
     applications = ""
     try:
@@ -27,7 +27,7 @@ def sparkApplicaiton(ipPort, applicationName, client):
             break
 
 def sparkStage(ipPort, applicationID, client):
-    print("Parse stage information.")
+    print("Parsing stage information ...")
     applicationList = 'http://' + ipPort + '/api/v1/applications/' + applicationID + '/stages'
     stages = ""
     try:
@@ -118,7 +118,7 @@ def influxDBWriter(line, timestamp, hostname, applicationID, data):
         data.append(row)
 
 def hibench(dir, applicationID, client):
-    print("Parse hibench information.")
+    print("Parsing hibench information ...")
     data = []
     with open(dir, mode="rb") as osInfo:
         index = 0
@@ -167,10 +167,10 @@ def main():
     client = InfluxDBClient(ip, int(port), user, pwd, db)
     client.create_database(db)
     #Application ID and parser data from Spark history server
-    print "Parsing Spark history data."
+    print "Parsing Spark history data ...."
     applicaitonId = sparkApplicaiton(historyServer, applicationName, client)
     #Parse hibench data
-    print "Parsing Hibench monitor data."
+    print "Parsing Hibench monitor data ..."
     try:
         hibench(hibenchDir, applicaitonId, client)
     except Exception as ex:
