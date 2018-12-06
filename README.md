@@ -44,7 +44,7 @@
     
 5. Run queries
 
-    Note: Currently, only Query01-02 works properly.
+    **Note: Currently, only Query01-02 works properly.**
     
     For example, if you want to run Query01, you can run the following command:
     ```sh
